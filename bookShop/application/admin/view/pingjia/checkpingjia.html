@@ -1,0 +1,28 @@
+<body>
+<center>
+{include  file="./public/common/admintop.html"/}
+<meta charset="utf-8">
+
+{foreach $shoplists as $shoplist}
+			<table style='width:830px;font-size:small;border-width:1px;border-style:solid;align:center;height:120px;'>
+			<tr>
+
+			<td>整体评价：
+
+			{for start="1" end="$shoplist.pjstar+1"}
+			<img src="__ROOT__/public/static/image/review_star_fen.gif">
+			{/for}
+			{for start="$shoplist.pjstar" end="5"}
+			<img src="__ROOT__/public/static/image/review_star_fen_gray.gif">
+			{/for}
+			</td>
+			<td align=right>评价时间：{$shoplist.pjtime}&nbsp;&nbsp;&nbsp;IP:{$shoplist.pjip}</td>
+			</tr>
+			<tr><td colspan=2>评价内容：{$shoplist.pjcontent}
+			<a href="{:url('pingjia/deletepingjia')}?SLID={$shoplist.SLID}">删除</a>
+			</tr>
+			
+			</table>
+{/foreach}
+
+</center></body>

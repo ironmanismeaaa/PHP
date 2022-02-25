@@ -1,0 +1,68 @@
+{include  file="./public/common/admintop.html"/}
+<meta charset="utf-8">
+<center>
+<br><br>
+
+ <FORM action="{:url('book/addBook')}" method="post" enctype="multipart/form-data">
+   <table style="width:550px;border-width:2px;border-style:dotted;">
+   <tr>
+   <td colspan=2 style="background:url('image/ico_60.jpg'); text-align:center; width:650px;">
+   <font size=4>添加书本</font>&nbsp;&nbsp;<a href="{:url('book/index')}">返回</a></td>   
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>编号：</font></td>   
+   <td><input type=text name="bookID" SIZE=18></td>  
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>书名：</font></td>   
+   <td><input type=text name="bname" SIZE=18></td>  
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>类别：</font></td>   
+   <td><Select name="bclass" >
+                     <Option value="文学">文学
+                     <Option value="小说">小说
+                     <Option value="传记">传记
+                   </Select> 
+   </td>  
+   </tr> 
+   <tr>
+   <td style="text-align:right"><font size=2>作者：</font></td>   
+   <td><input type=text name="author" SIZE=18></td>
+   </tr>
+    
+   <tr>
+   <td style="text-align:right"><font size=2>说明：</font></td>   
+   <td><input type=text name="shuoming" SIZE=40></td>  
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>市场价：</font></td>   
+   <td><input type=text name="price" SIZE=18></td>  
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>现价：</font></td>   
+   <td><input type=text name="yourprice" SIZE=18></td>  
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>图片：</font></td>
+   <td><input type="file" name="pictures" size="24"> </td>
+   </tr>
+
+   <tr>
+   <tr>
+   <td style="text-align:right"><font size=2>是否特价：</font></td>   
+   <td><Select name="tejia" >
+                     <Option value="是" selected>是
+                     <Option value="否">否
+                   </Select> 
+   </td>  
+   </tr>
+   <tr>
+   <td style="text-align:right"><font size=2>当前销量：</font></td>   
+   <td><input type=text name="SelledNum" SIZE=18></td>  
+   </tr>  
+   <tr>
+   <td colspan=2 style="text-align:center"><INPUT type="submit" name="s" value="提交"></td></tr>
+   </table>
+   </FORM>
+</center>

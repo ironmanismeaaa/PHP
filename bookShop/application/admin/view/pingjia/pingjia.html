@@ -1,0 +1,41 @@
+<body>
+<center>
+{include  file="./public/common/admintop.html"/}
+<meta charset="utf-8">
+
+<table width="999px" border="0" cellpadding="0"
+			cellspacing="1" style="background:#d8d8d8;color:#333333">
+			
+			<tr><th width="100px" height="30" align="center" valign="middle">商品编号</th>
+				<th width="150px" align="center" valign="middle">商品图片</th>
+				<th width="110px" height="30" align="center" valign="middle">商品名称</th>				
+				<th width="100px" align="center" valign="middle">评论操作</th>				
+			
+			</tr>
+			
+
+			
+			
+			
+			
+			{foreach  $books as $book}
+			
+			<tr><td valign="middle" bgcolor="#FFFFFF">{$book.bookID}</td>
+				<td align="center" valign="middle" bgcolor="#FFFFFF">
+				<a href="{:url('book/bookDetail')}?bookID={$book.bookID}">
+					<img src="__ROOT__/public/static/picture/{$book.pictures}" width="60" heigth="60" border=0></a>
+				</td>
+				<td valign="middle" bgcolor="#FFFFFF">{$book.bname}</td>
+				<td valign="middle"  align="center"  bgcolor="#FFFFFF">
+				<a href="{:url('pingjia/checkpingjia')}?bookID={$book.bookID}">查看</a>
+				</td>
+			</tr>
+			{/foreach}
+			
+			
+			
+			
+			
+			
+			
+</center></body>

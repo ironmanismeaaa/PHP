@@ -1,0 +1,71 @@
+﻿{include  file="./public/common/top.html"/}
+<meta charset="utf-8">
+<head>
+    <title>Bookshop网</title>
+    <link href="__ROOT__/public/static/css/StyleIndex.css" rel="Stylesheet" type="text/css" /></head>
+</head>
+<center>
+ <table style='width:830px;border-width:1px;border-style:dotted;align:center;'>
+    <tr>
+        <td rowspan=7 width=170>
+        <a href="{:url('showbook/bookdetail')}?bookID={$book.bookID}"><img src="__ROOT__/public/static/picture/{$book.pictures}" border=0/>
+        </a></td>
+                 
+     </tr>
+     <tr>
+     	<td colspan=2>
+     	<div style='font-weight:bold;font-size:medium;height:40px;line-height:40px;color:#000066;text-align:left;border-width:1px; '>
+        {$book.bname}</div>
+     	<div style='text-align:left;font-size: medium; color: #000066;'>
+     	现价：<font size=4 color=red><b>￥{$book.yourprice}</b></font>
+     	<div style='text-decoration:line-through;margin-top:8px;'>原价:￥{$book.price}</div>
+     	
+     	</div>
+     	</td>
+     </tr>
+     <tr>
+     	<td width=60><font-size: medium; color: #000066;>销量：</font></td>
+     	<td><font-size: medium; color: #000066;>{$book.SelledNum}+</font></td>
+     </tr>
+     <tr>
+       <td width=60><font-size: medium; color: #000066;>简介：</font></td>
+       <td><font-size: medium; color: #000066;>{$book.shuoming}</font></td> 
+     </tr>
+     
+     <tr>
+     	<td colspan=2><a href='{:url('cart/addCart')}?bookID={$book.bookID}'>
+<img src="__ROOT__/public/static/image/ingwc_ico.jpg"border="0"/></a>
+</td>
+     </tr>
+     
+ </table>
+
+<table style='width:830px;font-weight:bold;border-width:1px;border-style:dotted;align:center;height:300px;'>
+     <tr><td colspan=1><img src="__ROOT__/public/static/picture/{$book.picture}" border=0 width=150px height=225px></td>
+     <td colspan=1><img src="__ROOT__/public/static/picture/{$book.picture2}" border=0 width=150px height=225px></td>
+     <td colspan=1><img src="__ROOT__/public/static/picture/{$book.picture3}" border=0 width=150px height=225px></td>
+     </tr>
+</table>
+<table style='width:830px;font-weight:bold;border-width:1px;border-style:dotted;align:center;height:40px;'>
+<tr><td>用户评价</td></tr>
+</table>
+{foreach $shoplists as $shoplist}
+<table style='width:830px;font-size:small;border-width:1px;border-style:solid;align:center;height:120px;'>
+<tr>
+
+<td>整体评价：
+
+{for start="1" end="$shoplist.pjstar+1"}
+<img src="__ROOT__/public/static/image/review_star_fen.gif">
+{/for}
+{for start="$shoplist.pjstar" end="5"}
+<img src="__ROOT__/public/static/image/review_star_fen_gray.gif">
+{/for}
+</td>
+<td align=right>评价时间：{$shoplist.pjtime}&nbsp;&nbsp;&nbsp;IP:{$shoplist.pjip}</td>
+</tr>
+<tr><td colspan=2>评价内容：{$shoplist.pjcontent}</tr>
+</table>
+{/foreach}
+
+</center>

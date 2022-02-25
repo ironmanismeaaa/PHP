@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<head>
+<link href="__ROOT__/public/static/css/prodList.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+<table width=100% border=0 margin:0 auto>
+<tr id="tr1">
+<td id="top1">
+<a href="{:url('index/index')}" style="text-decoration:none;" id="asty">Bookshop首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{:url('index/index')}" style="text-decoration:none;" id="asty">广东</a>&nbsp;&nbsp;&nbsp;&nbsp;
+{if condition="$Think.session.email eq ''"}
+<a href="{:url('login/login')}" style="text-decoration:none;" id="asty">你好，请登录&nbsp;&nbsp;</a>&nbsp;&nbsp;
+{else}
+<a href="{:url('login/logOut')}" style="text-decoration:none;" id="asty">退出&nbsp;&nbsp;</a>&nbsp;&nbsp;
+{/if}
+<a href="{:url('register/register')}" style="text-decoration:none;" id="asty">免费注册&nbsp;&nbsp;</a>&nbsp;&nbsp;
+<a href="{:url('admin/adminlogin/login')}" style="text-decoration:none;" id="asty">后台登录</a>&nbsp;&nbsp;
+<a href="{:url('order/showorder')}" style="text-decoration:none;" id="asty">我的订单</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{:url('cart/index')}" style="text-decoration:none;" id="asty">购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{:url('index/index')}" style="text-decoration:none;" id="asty">企业采购</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{:url('index/index')}" style="text-decoration:none;" id="asty">客服服务</a>
+</td>
+</tr>
+<tr id="tr2">
+<td id="top2">
+<div id="div3">
+<img src="__ROOT__/public/static/image/logo.png" style="width:233px; height:108px;float:left;"> 
+<div id="div2">
+<input type="text"  autocomplete="off" id="key" accesskey="s">
+<button  id="button1">搜索</button>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan=3 style="background-color:#f1f1f1; font-size: small;text-align:center; width:999px;height:40px">
+    <a href="{:url('index/index')}" style="text-decoration:none;"><span style=" color:#111111; font-weight:bold; font-size:medium; font-family:宋体"> 主页</span></a>
+    &nbsp;&nbsp;&nbsp; <span style=" color:#111111;"> |</span> &nbsp;&nbsp;&nbsp;
+    <a href="{:url('index/showbook')}"  style=" text-decoration:none;"><span style=" color:#111111; font-weight:bold; font-size:medium; font-family:宋体">图书</span></a>
+   
+</td>
+</tr>
+
+
+</table></center>
+</body>

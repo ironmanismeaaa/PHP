@@ -1,0 +1,68 @@
+{include  file="./public/common/top.html"/}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<link href="__ROOT__/public/static/css/prodList.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+<div id="content">
+		<div id="search_div" style="width:100%">
+			<form method="post" action="{:url('index/index')}">
+				<span class="input_span">按销量排序：
+    			<select name="sellnum">
+    			<Option value="" style="height:28px;">无序</option>
+   			 	<Option value="asc">升序</option>
+   				<Option value="desc">降序</option>
+    			</select>
+    			</span>
+    			<span class="input_span">按价格排序：
+    			<select name="price">
+    			<Option value="" style="height:28px;">无序</option> 
+    			<Option value="asc">升序</option>
+    			<Option value="desc">降序</option>
+    			</select>
+    			</span>
+				<span class="input_span">商品名：<input type="text" name="bname" style="width:120px"/></span>
+				<span class="input_span">商品种类：
+				<select name="bclass">
+				<Option value="" style="height:28px;">不限</option>
+				
+				{foreach $bclasses as $bclass}
+				<Option value="{$bclass.bclass}">{$bclass.bclass}</option>
+				{/foreach}
+				
+				</select>
+				</span>
+				<span class="input_span">商品价格区间：<input type="text" name="minprice" value="0"/>
+				<input type="text" name="maxprice"  value="1000"/></span>
+				<input type="submit" value="查 询">
+				
+			</form>
+		</div>
+
+
+	<div id="prod_content">
+	
+	{foreach $books as $book}
+			<div class="prod_div">
+			<a href="__ROOT__/index.php/index/showbook/bookdetail.html?bookID={$book.bookID}">
+				<img src="__ROOT__/public/static/picture/{$book.pictures}" border="0"/>
+			</a>
+				<div id="prod_name_div"> {$book.bname}</div>
+				<div id="prod_price_div">
+				<span>￥{$book.yourprice}元</span>
+				<span>&nbsp;&nbsp;销量:{$book.SelledNum}万+</span>
+				</div>
+				
+			 </div>
+			{/foreach}
+			<div style="clear: both"></div>
+	</div>
+</div>
+</div>
+	{include file="./public/common/bottom.html"/}
+</center>
+</body>
+</html>
